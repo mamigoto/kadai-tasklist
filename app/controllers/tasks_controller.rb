@@ -5,7 +5,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @task = Task.find(params[:id])
+    @task = task.find(params[:id])
   end
 
   def new
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
 
   # Strong Parameter
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
 end
 
