@@ -4,7 +4,8 @@ class TasksController < ApplicationController
   end
 
   def show
-    @message = Task.find(params[:id])
+    @task = Task.find(params[:id])
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -12,7 +13,7 @@ class TasksController < ApplicationController
   end
 
   def create
-     @task = Task.new(message_params)
+     @task = Task.new(task_params)
 
     if @task.save
       flash[:success] = 'Task が正常に投稿されました'
